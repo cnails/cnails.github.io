@@ -1,3 +1,0 @@
-render for html , that allows to substitute variables with %%title%% sequence;
-
-getHTML returns html ready to be used;
