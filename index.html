@@ -4,6 +4,10 @@
     <title>TODO</title>
     <script src="./todo.js"></script>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
         body {
             background: linear-gradient(to right, #42275a, #734b6d);
         }
@@ -90,26 +94,113 @@
             transform: translateY(0);
         }
     }
+    body {
+            cursor: none;
+        }
+        .filt {
+            filter: url(#filt);
+        }
+        .pointer {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: linear-gradient(aqua, bisque);
+            box-shadow: 0 0 90px aquamarine;
+        }
+        .block {
+            position: relative;
+            width: 200px;
+            height: 70px;
+            background-color: aquamarine;
+            border-radius: 10px;
+            box-shadow: 0 0 90px aquamarine;
+            color: cadetblue;
+            cursor: none;
+            transition: .5s all ease;
+        }
+        .block:hover {
+            background-color: aqua;
+            box-shadow: 0 0 90px aqua;
+            transform: scale(1.05);
+        }
+        svg {
+            width: 0;
+            height: 0;
+        }
+        .cont {
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+        }
+        .title {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 70px;
+        }
+        .title span {
+            transform: translateY(-45px);
+            letter-spacing: 10px;
+            font-weight: 900;
+            font-size: large;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
-    <div class="title">
-        <h1>LIST</h1>
+    <div class="filt">
+        <div class="cont">
+            <div class="pointer"></div>
+            <button class="block"></button>
+        </div>
     </div>
+    <div class="title"><span>New task</span></div>
     <div class="container">
         <div id="ft_list"></div>
-        <button class="btn">New</button>
     </div>
+    </div>
+    <svg>
+        <filter id="filt">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+            <feColorMatrix 
+                values= "
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 20 -10
+                "
+            />
+        </filter>
+    </svg>
 </body>
 <script>
+    document.querySelector("span").addEventListener("mousemove", function(e) {
+        var btn = document.querySelector(".block");
+        btn.style.backgroundColor = "aqua";
+        btn.style.boxShadow = "0 0 90px aqua";
+        btn.style.transform = "scale(1.05)";
+    });
+    document.querySelector("span").addEventListener("mouseout", function(e) {
+        var btn = document.querySelector(".block");
+        btn.style.backgroundColor = "";
+        btn.style.boxShadow = "";
+        btn.style.transform = "";
+    });
     document.addEventListener("click", function(e) {
-        if (e.target.tagName == "BUTTON") {
+        console.log(e.target);
+        if (e.target.tagName == "BUTTON" || e.target.tagName == "SPAN") {
             e.preventDefault();
             var text = prompt("new task:");
             if (text) {
                 addTask(text);
             }
         }
+    });
+    document.addEventListener("mousemove", function(e) {
+        var pointer = document.querySelector(".pointer");
+        pointer.style.top = e.pageY - 20 + "px";
+        pointer.style.left = e.pageX - 20 + "px";
     });
     checkCookie();
 </script>
