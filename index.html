@@ -3,411 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camagru</title>
-    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <style>
-        .filt {
-            position: relative;
-            filter: url(#filt);
-            width: 100%;
-            height: 100%;
-        }
-        .pointer {
-            z-index: 1000;
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-image: linear-gradient(aqua, bisque);
-            box-shadow: 0 0 190px aquamarine;
-        }
-        .bubble {
-            z-index: 3;
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            box-shadow: 0 0 100px aquamarine;
-            background-image: linear-gradient(aqua, bisque);
-            border-radius: 50%;
-        }
-         .btn_span {
-            z-index: 100;
-            position: absolute;
-            background: purple;
-            box-shadow: 0 0 100px purple;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            border-radius: 50%;
-            animation: animate 1s linear infinite;   
-        }
-        .container.active .btn_span {
-            background: #ffee22;
-
-        }
-        @keyframes animate {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 0.7;
-            }
-            100% {
-                height: 1000px;
-                width: 1000px;
-                opacity: 0;
-                background: red;
-            }
-        }
-        .b1 {
-            width: 90px;
-            height: 90px;
-            animation: bubble_1 20s infinite;
-            /* animation-delay: 1s; */
-        }
-        .b2 {
-            background-image: linear-gradient(to left, aqua, bisque);
-            animation: bubble_2 18s infinite;
-            /* animation-delay: 2s; */
-        }
-        .b3 {
-            animation: bubble_3 20s infinite;
-            animation-delay: .3s;
-        }
-        .b4 {
-            background-image: linear-gradient(to left, aqua, bisque);
-            width: 120px;
-            height: 120px;
-            animation: bubble_4 16s infinite;
-            animation-delay: .7s;
-        }
-        .b5 {
-            background-image: linear-gradient(to left, aqua, bisque);
-            width: 100px;
-            height: 100px;
-            animation: bubble_5 15s infinite;
-            /* animation-delay: 5s; */
-        }
-        .b6 {
-            background-image: linear-gradient(to right, aqua, bisque);
-            width: 80px;
-            height: 80px;
-            animation: bubble_6 17s infinite;
-        }
-        @keyframes bubble_1 {
-            0% {
-                top: 200px;
-                left: 300px;
-            }
-            25% {
-                top: 120px;
-                left: 40px;
-            }
-            50% {
-                top: 10px;
-                left: 10px;
-            }
-            100% {
-                top: 200px;
-                left: 300px;
-            }
-        }
-        @keyframes bubble_2 {
-            0% {
-                top: 330px;
-                left: 20px;
-            }
-            25% {
-                top: 20px;
-                left: 200px;
-            }
-            50% {
-                top: 140px;
-                left: 180px;
-            }
-            100% {
-                top: 330px;
-                left: 20px;
-            }
-        }
-        @keyframes bubble_4 {
-            0% {
-                top: 20px;
-                left: 70px;
-            }
-            25% {
-                top: 250px;
-                left: 300px;
-            }
-            50% {
-                top: 440px;
-                left: 180px;
-            }
-            100% {
-                top: 20px;
-                left: 70px;
-            }
-        }
-        @keyframes bubble_3 {
-            0% {
-                top: 40px;
-                left: 0px;
-            }
-            50% {
-                top: 300px;
-                left: 200px;
-            }
-            100% {
-                top: 40px;
-                left: 0px;
-            }
-        }
-        @keyframes bubble_5 {
-            0% {
-                top: 410px;
-                left: 100px;
-            }
-            25% {
-                top: 300px;
-                left: 150px;
-            }
-            50% {
-                top: 400px;
-                left: 20px;
-            }
-            100% {
-                top: 410px;
-                left: 100px;
-            }
-        }
-        @keyframes bubble_6 {
-            0% {
-                top: 10px;
-                left: 200px;
-            }
-            25% {
-                top: 25px;
-                left: 100px;
-            }
-            50% {
-                top: 10px;
-                left: 20px;
-            }
-            100% {
-                top: 10px;
-                left: 200px;
-            }
-        }
-        .block p {
-            z-index: 100;
-            position: relative;
-        }
-    </style>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <section>
-        <div class="container">
-            <div class="form sign_in_bx">
-                <div class="block">
-                    <div class="filt">
-                        <div class="bubble b4"></div>
-                        <div class="bubble b1"></div>
-                        <div class="bubble b2"></div>
-                        <div class="bubble b3"></div>
-                        <div class="bubble b5"></div>
-                        <div class="bubble b6"></div>
-                        <div class="pointer"></div>
-                    </div>
-                </div>
-                <div class="form_bx">
-                    <form>
-                        <h2>Sign in</h2>
-                        <input type="text" name="" placeholder="Username">
-                        <p class="notice min_len user invis">username length must be at least 3 characters</p>
-                        <input type="password" name="" placeholder="Password">
-                        <p class="notice min_len pwd invis">password length must be at least 7 characters</p>
-                        <p class="notice cappital invis">password must contain at least one capital letter</p>
-                        <input type="submit" name="" value="Login">
-                        <p class="signup">Don't have an account? <a onclick="func();" href="#">Sign Up.</a></p>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="form sign_up_bx">
-                <div class="form_bx">
-                    <form>
-                        <h2>Create an account</h2>
-                        <input type="text" name="" placeholder="Username">
-                        <p class="notice min_len user invis">username length must be at least 3 characters</p>
-                        <input type="email" name="" placeholder="Email Address">
-                        <p class="notice email invis">incorrect email address</p>
-                        <input type="password" name="" placeholder="Password">
-                        <p class="notice min_len pwd invis">password length must be at least 7 characters</p>
-                        <p class="notice cappital pwd invis">password must contain at least one capital letter</p>
-                        <input class="second_password" type="password" name="" placeholder="Confirm Password">
-                        <p class="notice match invis">passwords don't match</p>
-                        <input type="submit" name="" value="Sign Up">
-                        <p class="signup">Already have an account? <a onclick="func();" href="#">Sign In.</a></p>
-                    </form>
-                </div>
-                <div class="block">
-                    <div class="filt sec">
-                        <div class="bubble b4"></div>
-                        <div class="bubble b1"></div>
-                        <div class="bubble b2"></div>
-                        <div class="bubble b3"></div>
-                        <div class="bubble b5"></div>
-                        <div class="bubble b6"></div>
-                        <div class="pointer"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <svg>
-        <filter id="filt">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-            <feColorMatrix 
-            values= "
-            1 0 0 0 0
-                0 1 0 0 0
-                0 0 1 0 0
-                0 0 0 15 -8
-                "
-                />
-            </filter>
-        </svg>
-        <script type="text/javascript">
-        active = false;
-        function func() {
-            var cont = document.querySelector(".container");
-            cont.classList.toggle('active');
-            if (active)
-                active = false;
-            else
-                active = true;
+<style>
+    body, html {
+            margin:0;
+            padding:0;
+            display: flex;
+            align-items: center;
+            /* flex: auto; */
+            flex-direction: column;
+            text-align: center;
         }
-        document.querySelector(".sign_in_bx .block").addEventListener("mousemove", function(e) {
-            var target = e.target.closest('.filt');
-            var targetCoords = target.getBoundingClientRect();
-            var x = e.clientX - targetCoords.left;
-            var y = e.clientY - targetCoords.top;
-            var pointer = document.querySelector(".pointer");
-            pointer.style.top = y - 40 + "px";
-            pointer.style.left = x - 40 + "px";
-        });
-        document.querySelector(".sign_up_bx .block").addEventListener("mousemove", function(e) {
-            var target = e.target.closest('.filt.sec');
-            var targetCoords = target.getBoundingClientRect();
-            var x = e.clientX - targetCoords.left;
-            var y = e.clientY - targetCoords.top;
-            var pointer = document.querySelector(".sec .pointer");
-            pointer.style.top = y - 40 + "px";
-            pointer.style.left = x - 40 + "px";
-        });
-        document.querySelector(".sign_up_bx .block").addEventListener("click", function(e) {
-            var target = e.target.closest('.filt.sec');
-            var targetCoords = target.getBoundingClientRect();
-            var x = e.clientX - targetCoords.left;
-            var y = e.clientY - targetCoords.top;
-            
-            let span = document.createElement("span");
-            span.classList.add("btn_span");
-            span.style.left = x + "px";
-            span.style.top = y + "px";
-            document.querySelector(".filt.sec").appendChild(span);
-            setTimeout(() => { span.remove() }, 1000);
-        });
-        document.querySelector(".sign_in_bx .block").addEventListener("click", function(e) {
-                var target = e.target.closest('.filt');
-                var targetCoords = target.getBoundingClientRect();
-                var x = e.clientX - targetCoords.left;
-                var y = e.clientY - targetCoords.top;
-                
-                let span = document.createElement("span");
-                span.classList.add("btn_span");
-                span.style.left = x + "px";
-                span.style.top = y + "px";
-                document.querySelector(".filt").appendChild(span);
-                setTimeout(() => { span.remove() }, 1000);
-            });
-        // document.querySelectorAll(".block").forEach(block => {
-        //     block.addEventListener("mousemove", function(e) {
-        //         var target = e.target.closest('.block p');
-        //         var targetCoords = target.getBoundingClientRect();
-        //         var x = e.clientX - targetCoords.left;
-        //         var y = e.clientY - targetCoords.top;
-        //         console.log("x = " + x);
-        //         var pointer = document.querySelector(".pointer");
-        //         pointer.style.top = y - 20 + "px";
-        //         pointer.style.left = x - 20 + "px";
-        //     });
-        // });
-        document.querySelector(".sign_in_bx input[type='submit']").addEventListener("click", function(e) {
-            e.preventDefault();
-            let flag = true;
-            let username = document.querySelector(".sign_in_bx input[type='text']");
-            let password = document.querySelector(".sign_in_bx input[type='password']");
-            document.querySelector(".notice.min_len.pwd").classList.add("invis");
-            document.querySelector(".notice.min_len.user").classList.add("invis");
-            document.querySelector(".notice.cappital").classList.add("invis");
-            if (username.value.length < 3) {
-                document.querySelector(".notice.min_len.user").classList.remove("invis");
-                flag = false;
-            }
-            if (password.value.length < 7) {
-                document.querySelector(".notice.min_len.pwd").classList.remove("invis");
-                flag = false;
-                return;
-            }
-            if ((/^(?=.*[A-Z])[A-Za-z\d]{7,}$/).test(password.value) === false) {
-                document.querySelector(".notice.cappital").classList.remove("invis");
-                flag = false;
-            }
-            if (flag) {
-                SendRequest("get", "api/login.php", "user=" + username.value + "&pwd=" + password.value, function(e) {
-                    console.log(e.response);
-                });
-            }
-        });
-        document.querySelector(".sign_up_bx input[type='submit']").addEventListener("click", function(e) {
-            e.preventDefault();
-            let flag = true;
-            let username = document.querySelector(".sign_up_bx input[type='text']");
-            let password = document.querySelector(".sign_up_bx input[type='password']");
-            let second_password = document.querySelector(".sign_up_bx .second_password");
-            let email = document.querySelector(".sign_up_bx [type='email']");
-            document.querySelector(".sign_up_bx .notice.min_len.pwd").classList.add("invis");
-            document.querySelector(".sign_up_bx .notice.min_len.user").classList.add("invis");
-            document.querySelector(".sign_up_bx .notice.cappital").classList.add("invis");
-            document.querySelector(".sign_up_bx .notice.match").classList.add("invis");
-            document.querySelector(".sign_up_bx .notice.email").classList.add("invis");
-            if (/.+@.+\..+/.test(email.value) === false) {
-                document.querySelector(".sign_up_bx .notice.email").classList.remove("invis");
-                flag = false;
-            }
-            if (username.value.length < 3) {
-                document.querySelector(".sign_up_bx .notice.min_len.user").classList.remove("invis");
-                flag = false;
-            }
-            if (second_password.value !== password.value) {
-                document.querySelector(".sign_up_bx .notice.match").classList.remove("invis");
-                flag = false;
-            }
-            if (password.value.length < 7) {
-                document.querySelector(".sign_up_bx .notice.min_len.pwd").classList.remove("invis");
-                flag = false;
-                return;
-            }
-            if ((/^(?=.*[A-Z])[A-Za-z\d]{7,}$/).test(password.value) === false) {
-                document.querySelector(".sign_up_bx .notice.cappital").classList.remove("invis");
-                flag = false;
-            }
-            // if (flag) {
 
-            // }
-        });
-    </script>
+    canvas {display:block}
+    .letters {
+        position: absolute;
+        top: 150px;
+        transition: all 2s ease;
+    }
+    .letter {
+        font-family: 'Rowdies', cursive;
+        letter-spacing: 10px;
+        font-size: 60px;
+        display: inline-block;
+        color: aqua;
+        opacity: 0;
+        transform: scale(.5);
+        transition: all 1s ease;
+        text-shadow: 1px 1px 2px black, 0 0 1em aqua;
+    }
+    .letters:hover {
+        transform: scale(2);
+        /* transform: skewY(90deg); */
+        transform: rotate(360deg);
+    }
+</style>
+<body>
+    <canvas></canvas>
+    <!-- <div class="letters let1">
+        <div class="letter">в</div>
+    </div> -->
+    <div class="letters">
+        <div class="letter" data-delay="0.1">я</div>
+        <div class="letter" data-delay="0.2">м</div>
+        <div class="letter" data-delay="0.3">и</div>
+        <div class="letter" data-delay=".4">л</div>
+        <div class="letter" data-delay=".4">ь</div>
+        </br>
+        
+        <div class="letter" data-delay=".5">с</div>
+        </br>
+        
+        <div class="letter" data-delay=".6">д</div>
+        <div class="letter" data-delay=".7">н</div>
+        <div class="letter" data-delay=".8">ё</div>
+        <div class="letter" data-delay=".9">м</div>
+        </br>
+        
+        <div class="letter" data-delay="1">р</div>
+        <div class="letter" data-delay="1.1">о</div>
+        <div class="letter" data-delay="1.2">ж</div>
+        <div class="letter" data-delay="1.3">д</div>
+        <div class="letter" data-delay="1.4">е</div>
+        <div class="letter" data-delay="1.5">н</div>
+        <div class="letter" data-delay="1.6">и</div>
+        <div class="letter" data-delay="1.7">я</div>
+    
+        <div class="letter" data-delay="2">!</div>
+    </div>
 </body>
+<script>
+    const letters = document.querySelectorAll(".letter");
+    var delay = 0;
+
+    letters.forEach(letter => {
+        setTimeout(function() {
+            letter.style.opacity = 1;
+            letter.style.transform = "translateY(-40px)";
+            letter.style.transform += "scale(1.5)";
+        }, delay);
+        delay += 300;
+    });
+
+    const rndColor = () => {
+        const base  = Math.random() * 360 | 0;
+        const color = (275 * (base / 200 | 0)) + base % 200;
+        return fac => `hsl(${color}, ${(fac || 1) * 100}%, ${(fac || 1) * 60}%)`;
+    };
+    class Battery
+    {
+        constructor(fireworks) {
+            this.fireworks = fireworks;
+            this.salve = [];
+            this.x     = Math.random();
+            this.t     = 0;
+            this.tmod  = 20 + Math.random() * 20 | 0;
+            this.tmax  = 500 + Math.random() * 1000;
+
+            this._shot = salve => {
+                // console.log(this.x * this.fireworks.width, salve.y);
+                if (salve.y < salve.ym) {
+                    salve.cb = this._prepareExplosion;
+                }
+
+                salve.x += salve.mx;
+                salve.y -= 0.01;
+
+                const r = Math.atan2(-0.01, salve.mx);
+
+                this.fireworks.engine.strokeStyle = salve.c(.7);
+                this.fireworks.engine.beginPath();
+
+                this.fireworks.engine.moveTo(
+                    (this.x + salve.x) * this.fireworks.width + Math.cos(r) * 4,
+                    salve.y * this.fireworks.height + Math.sin(r) * 4
+                );
+
+                this.fireworks.engine.lineTo(
+                    (this.x + salve.x) * this.fireworks.width + Math.cos(r + Math.PI) * 4,
+                    salve.y * this.fireworks.height + Math.sin(r + Math.PI) * 4
+                );
+
+                this.fireworks.engine.lineWidth = 3;
+                this.fireworks.engine.stroke();
+
+                // this.fireworks.engine.fillRect((this.x + salve.x) * this.fireworks.width, salve.y * this.fireworks.height, 10, 10);
+            };
+
+            this._prepareExplosion = salve => {
+                salve.explosion = [];
+
+                for (let i = 0, max = 32; i < max; i++) {
+                    salve.explosion.push({
+                        r : 2 * i / Math.PI,
+                        s : 0.5 + Math.random() * 0.5,
+                        d : 0,
+                        y : 0
+                    });
+                }
+
+                salve.cb = this._explode;
+            };
+
+            this._explode = salve => {
+
+                this.fireworks.engine.fillStyle = salve.c();
+
+                salve.explosion.forEach(explo => {
+
+                    explo.d += explo.s;
+                    explo.s *= 0.99;
+                    explo.y += 0.5;
+
+                    const alpha = explo.s * 2.5;
+                    this.fireworks.engine.globalAlpha = alpha;
+
+                    if (alpha < 0.05) {
+                        salve.cb = null;
+                    }
+
+                    this.fireworks.engine.fillRect(
+                        Math.cos(explo.r) * explo.d + (this.x + salve.x) * this.fireworks.width,
+                        Math.sin(explo.r) * explo.d + explo.y + salve.y * this.fireworks.height,
+                        3,
+                        3
+                    );
+                });
+
+                this.fireworks.engine.globalAlpha = 1;
+            }
+        }
+
+        pushSalve() {
+            this.salve.push({
+                x: 0,
+                mx: -0.02 * Math.random() * 0.04,
+                y: 1,
+                ym: 0.05 + Math.random() * 0.5,
+                c: rndColor(),
+                cb: this._shot
+            });
+        };
+
+        render() {
+
+            this.t++;
+
+            if (this.t < this.tmax && (this.t % this.tmod) === 0) {
+                this.pushSalve();
+            }
+
+            let rendered = false;
+
+            this.salve.forEach(salve => {
+
+                if (salve.cb) {
+                    rendered = true;
+                    salve.cb(salve);
+                }
+
+            });
+
+            if (this.t > this.tmax) {
+                return rendered;
+            }
+
+            return true;
+        }
+    }
+
+    class Fireworks
+    {
+        constructor() {
+            this.canvas = window.document.querySelector('canvas');
+            this.engine = this.canvas.getContext('2d');
+            this.stacks = new Map();
+
+            this.resize();
+        }
+
+        resize() {
+            this.width  = window.innerWidth;
+            this.height = window.innerHeight;
+
+            this.canvas.setAttribute('width', this.width);
+            this.canvas.setAttribute('height', this.height);
+        }
+
+        clear() {
+            this.engine.clearRect(0, 0, this.width, this.height);
+            this.engine.fillStyle = '#222';
+            this.engine.fillRect(0, 0, this.width, this.height);
+        }
+
+        addBattery() {
+        const bat = new Battery(this);
+        this.stacks.set(Date.now(), bat);  
+        }
+    
+        render() {
+
+            if (Math.random() < 0.05) {
+            this.addBattery();
+            }
+        
+            this.clear();
+
+            this.stacks.forEach((scene, key) => {
+
+                const rendered = scene.render();
+
+                if (!rendered) {
+                    this.stacks.delete(key);
+                }
+            });
+
+            requestAnimationFrame(this.render.bind(this));
+        }
+
+        run() {
+            for(let i = 0; i < 1; i++) {
+            this.addBattery();
+            }
+            window.addEventListener('resize', this.resize.bind(this));
+            this.render();
+        }
+    }
+
+    a = new Fireworks();
+    a.run();
+</script>
 </html>
