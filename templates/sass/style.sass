@@ -95,6 +95,32 @@ a:link
         &:hover
             color: pink
 
+.toggle
+    display: none
+    span
+        position: relative
+        display: inline-block
+        width: 20px
+        height: 4px
+        margin-top: 20px
+        border-radius: 2px
+        background-color: #cbcbcb
+        &::after
+            top: 5px
+            left: 0
+        &::before
+            top: -9px
+            left: 0
+        &::after, &::before
+            content: ""
+            display: inline-block
+            position: absolute
+            width: 20px
+            height: 4px
+            margin-top: 2px
+            border-radius: 2px
+            background-color: #cbcbcb
+
 .navbar
     width: $navbar-width
     height: 100%
@@ -158,17 +184,15 @@ a:link
 // 
 
 .user-profile
-    // z-index: 5
+    z-index: -1
     position: absolute
     margin-top: 60px
     margin-left: 60px
     padding: 20px
     background-color: #1d1d1d
-    // width: calc(100% - 20vw)
     width: 64rem
     max-width: 80%
     min-height: 400px
-    // margin-right: 20px
     overflow: hidden
     margin-bottom: 50px
     // .btn_span
@@ -185,7 +209,8 @@ a:link
         div
             text-align: center
             align-items: center
-            width: 65px
+            // width: 65px
+            // width: auto
             width: 65px
             img
                 max-width: 65px
@@ -261,7 +286,7 @@ a:link
         // margin-left: 40px
     #connection
         position: relative
-        margin-left: 15px
+        // margin-left: 15px
         // tac
         font-size: 14px
         color: #c4c2c2
@@ -273,7 +298,7 @@ a:link
             width: 8px
             height: 8px
             top: 6px
-            left: -12px
+            left: calc(50% - 30px);
             // animation: notification 5s infinite
 
 
@@ -470,7 +495,82 @@ a:link
         opacity: 0
 
 // 
-    // SEARCH PAGE
+    // INDEX PAGE
 // 
 
-
+.user-profile-short
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    .user-data
+        max-width: 70%
+    figure
+        div
+            width: auto
+            img
+                max-width: 320px
+                max-height: 250px
+    #rating, #age, #gender, #username, #name
+        margin-left: 10px
+        line-height: 20px
+        display: inline-block
+        // color: #e2e2e2
+    div
+        color: #b0b0b0
+        span
+            color: #e2e2e2
+    #name
+        display: block
+    .user-data
+        div
+            position: relative
+        .short-history
+            overflow: hidden
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 3
+        #show-more
+            left: 0
+            position: absolute
+            bottom: -17px
+            background-color: #1d1d1d
+            color: #96cbf8
+            outline: none
+            border: none
+            &:focus ~ .short-history
+                display: inline-block
+                
+@media screen and ( max-width: 780px )
+    .toggle
+        display: inline-block
+        position: fixed
+        top: 10px
+        left: 10px
+    .user-profile
+        figure
+            div
+                width: auto
+                img
+                    max-width: 70%
+                    max-height: 350px
+        .img-area
+            display: flex
+            justify-content: center
+    .navbar
+        display: none
+    .navbar-active
+        display: flex
+        top: 50px
+        .navbar_info
+            left: $navbar-width
+            opacity: 1
+    .user-profile
+        margin-left: 0
+    .user-profile-short
+        padding: 20px 0
+        figure
+            img
+                max-width: 90%
+        .user-data
+            margin-top: 20px
+            max-width: 90%

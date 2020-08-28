@@ -128,6 +128,41 @@ a:link {
   color: pink;
 }
 
+.toggle {
+  display: none;
+}
+
+.toggle span {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 4px;
+  margin-top: 20px;
+  border-radius: 2px;
+  background-color: #cbcbcb;
+}
+
+.toggle span::after {
+  top: 5px;
+  left: 0;
+}
+
+.toggle span::before {
+  top: -9px;
+  left: 0;
+}
+
+.toggle span::after, .toggle span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  margin-top: 2px;
+  border-radius: 2px;
+  background-color: #cbcbcb;
+}
+
 .navbar {
   width: 60px;
   height: 100%;
@@ -208,6 +243,7 @@ a:link {
 }
 
 .user-profile {
+  z-index: -1;
   position: absolute;
   margin-top: 60px;
   margin-left: 60px;
@@ -230,7 +266,6 @@ a:link {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 65px;
   width: 65px;
 }
 
@@ -331,7 +366,6 @@ a:link {
 
 .user-profile #connection {
   position: relative;
-  margin-left: 15px;
   font-size: 14px;
   color: #c4c2c2;
 }
@@ -344,7 +378,7 @@ a:link {
   width: 8px;
   height: 8px;
   top: 6px;
-  left: -12px;
+  left: calc(50% - 30px);
 }
 
 .user-profile .buttons div {
@@ -603,6 +637,123 @@ a:link {
     height: 1000px;
     width: 1000px;
     opacity: 0;
+  }
+}
+
+.user-profile-short {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-profile-short .user-data {
+  max-width: 70%;
+}
+
+.user-profile-short figure div {
+  width: auto;
+}
+
+.user-profile-short figure div img {
+  max-width: 320px;
+  max-height: 250px;
+}
+
+.user-profile-short #rating, .user-profile-short #age, .user-profile-short #gender, .user-profile-short #username, .user-profile-short #name {
+  margin-left: 10px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.user-profile-short div {
+  color: #b0b0b0;
+}
+
+.user-profile-short div span {
+  color: #e2e2e2;
+}
+
+.user-profile-short #name {
+  display: block;
+}
+
+.user-profile-short .user-data div {
+  position: relative;
+}
+
+.user-profile-short .user-data .short-history {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.user-profile-short .user-data #show-more {
+  left: 0;
+  position: absolute;
+  bottom: -17px;
+  background-color: #1d1d1d;
+  color: #96cbf8;
+  outline: none;
+  border: none;
+}
+
+.user-profile-short .user-data #show-more:focus ~ .short-history {
+  display: inline-block;
+}
+
+@media screen and (max-width: 780px) {
+  .toggle {
+    display: inline-block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }
+  .user-profile figure div {
+    width: auto;
+  }
+  .user-profile figure div img {
+    max-width: 70%;
+    max-height: 350px;
+  }
+  .user-profile .img-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar-active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 50px;
+  }
+  .navbar-active .navbar_info {
+    left: 60px;
+    opacity: 1;
+  }
+  .user-profile {
+    margin-left: 0;
+  }
+  .user-profile-short {
+    padding: 20px 0;
+  }
+  .user-profile-short figure img {
+    max-width: 90%;
+  }
+  .user-profile-short .user-data {
+    margin-top: 20px;
+    max-width: 90%;
   }
 }
 /*# sourceMappingURL=style.css.map */
