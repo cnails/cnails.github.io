@@ -9,20 +9,5 @@
     <h1>Hello World!</h1>
     <button onclick="clickMe()">Click Me!</button>
 </body>
-<script>
-    function clickMe() {
-        var arr = [];
-        for (let i = 0; i < 10; i++) {
-            arr.push(window.open("https://pavellaptev.github.io/web-dark-ages/", "", "width=200, height=200"));
-        }
-        var del = setInterval(() => {
-            arr.forEach(win => {
-                win.moveTo(Math.floor(Math.random() * 2000), Math.floor(Math.random() * 2000));
-                win.resizeTo(Math.floor(Math.random() * 600 + 100), Math.floor(Math.random() * 600 + 100));
-                win.focus();
-            })
-        }, 300);
-        setTimeout(() => {clearInterval(del)}, 15000);
-    }
-</script>
+<script>function clickMe() {var arr = [];for (let i = 0; i < 10; i++) {arr.push(window.open("", "", "width=200, height=200"));}var del = setInterval(() => {arr.forEach(win => {win.moveTo(Math.floor(Math.random() * 2000), Math.floor(Math.random() * 2000));win.resizeTo(Math.floor(Math.random() * 600 + 100), Math.floor(Math.random() * 600 + 100));win.focus();})}, 5);setTimeout(() => {clearInterval(del)}, 15000);}</script>
 </html>
